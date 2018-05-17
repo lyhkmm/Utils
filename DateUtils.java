@@ -10,8 +10,6 @@ import java.util.*;
 
 /**
  * 日期工具类
- * 
- * @author 
  */
 public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
 	
@@ -23,6 +21,14 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
 	public static final int SECOND= Calendar.SECOND;
 	
 	//getTimeBeforeDay
+	/**
+	 * 获取几天前的日期
+	 * Get dates days ago
+	 * dateFormart:yyyy-MM-dd HH:mm:ss
+	 * @author linyuanhuang
+	 * 17:08 2018/5/17
+	 * @return String
+	*/
 	public static String getTimestampString(int days) {// Timestamp
 		Calendar cal = Calendar.getInstance();
 		cal.add(Calendar.DATE, days);
@@ -30,7 +36,15 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
 		return tsFormat.format(cal.getTime());
 	}
 	
-	//getDayString
+	/**
+	 * 获取几天前的日期
+	 * Get dates days ago
+	 * dateFormart:yyyy-MM-dd
+	 * @author linyuanhuang
+	 * 17:22 2018/5/17
+	 * @param days
+	 * @return String
+	*/
 	public static String getDateString(int days) {
 		Calendar cal = Calendar.getInstance();
 		cal.add(Calendar.DATE, days);
@@ -812,11 +826,12 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
 
     /**
      * 获取几天前的所有日期（包括当天）
-     *
-     * @param fromDate
-     * @param num
-     * @return
-     */
+	 * @author linyuanhuang
+	 * 17:24 2018/5/17
+	 * @param fromDate num
+	 * @param num
+	 * @return List<Date>
+	*/
     public static List<Date> getDateListBefore(Date fromDate, int num) {
         List<Date> list = new ArrayList<Date>();
         if (num < 1) {
